@@ -1,0 +1,15 @@
+language: objective-c
+
+osx_image: xcode7.1
+
+cache:
+    directories:
+        - node_modules
+
+install:
+    - npm install -g https://github.com/rosen-vladimirov/nativescript-cli/releases/download/v0.9.1-proxy-test/nativescript-1.5.2-non-ci.tgz
+    - tns usage-reporting disable
+    - tns platform add ios
+
+script:
+    - tns test ios --emulator
